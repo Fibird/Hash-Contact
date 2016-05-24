@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1452069876 source:e:\codeblocks\contact\main.cpp
+	<iostream>
+	<fstream>
+	<cstdlib>
+	<cstdio>
+	<windows.h>
+	<ctime>
+	"HashTable.h"
+
+1452069825 source:e:\codeblocks\contact\hashtable.cpp
+	"HashTable.h"
+
+1452067980 e:\codeblocks\contact\hashtable.h
+	<iostream>
+	<fstream>
+	<cstdlib>
+	<cstdio>
+	"student.h"
+
+1451562515 e:\codeblocks\contact\student.h
+	<iostream>
+
+1451562515 source:e:\codeblocks\contact\student.cpp
+	"student.h"
+

@@ -1,14 +1,25 @@
-/***********************************************************************
- *  Copyright(c) 2015-2016 西北农林科技大学.
- *  All rights reserved.
+/***************************************************************************
+ * Basic Operations of Hash Contact
  *
- *  文件名称：hashtable.cpp
- *  简要描述：该源文件中包含Node结构体和HashTable类的实现。
+ * Author: Chaoyang Liu
+ * E-main: chaoyanglius@outlook.com
  *
- *  当前版本：1.0
- *  作者/修改者：刘朝洋
- *  完成日期：2016年1月4日
- * ***********************************************************************/
+ * Software License Agreement (GPL License)
+ * Copyright (c) 2017, Chaoyang Liu
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ ****************************************************************************/
 #include "hashtable.h"
 
 int avglength = 0;      //计算平均搜索长度

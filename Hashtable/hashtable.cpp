@@ -1,20 +1,20 @@
 /***********************************************************************
- *  Copyright(c) 2015-2016 Î÷±±Å©ÁÖ¿Æ¼¼´óÑ§.
+ *  Copyright(c) 2015-2016 è¥¿åŒ—å†œæ—ç§‘æŠ€å¤§å­¦.
  *  All rights reserved.
  *
- *  ÎÄ¼şÃû³Æ£ºhashtable.cpp
- *  ¼òÒªÃèÊö£º¸ÃÔ´ÎÄ¼şÖĞ°üº¬Node½á¹¹ÌåºÍHashTableÀàµÄÊµÏÖ¡£
+ *  æ–‡ä»¶åç§°ï¼šhashtable.cpp
+ *  ç®€è¦æè¿°ï¼šè¯¥æºæ–‡ä»¶ä¸­åŒ…å«Nodeç»“æ„ä½“å’ŒHashTableç±»çš„å®ç°ã€‚
  *
- *  µ±Ç°°æ±¾£º1.0
- *  ×÷Õß/ĞŞ¸ÄÕß£ºÁõ³¯Ñó
- *  Íê³ÉÈÕÆÚ£º2016Äê1ÔÂ4ÈÕ
+ *  å½“å‰ç‰ˆæœ¬ï¼š1.0
+ *  ä½œè€…/ä¿®æ”¹è€…ï¼šåˆ˜æœæ´‹
+ *  å®Œæˆæ—¥æœŸï¼š2016å¹´1æœˆ4æ—¥
  * ***********************************************************************/
-#include "HashTable.h"
+#include "hashtable.h"
 
-int avglength = 0;      //¼ÆËãÆ½¾ùËÑË÷³¤¶È
+int avglength = 0;      //è®¡ç®—å¹³å‡æœç´¢é•¿åº¦
 
 /******************************struct Node**************************************/
-//¹¹Ôìº¯Êı
+//æ„é€ å‡½æ•°
 Node::Node(string sname, string sage, string sphoneNumber,
            string ssex, string s_class, Node *r, Node *d)
 {
@@ -228,23 +228,24 @@ bool HashTable::nameSearch(string sname)
 {
     unsigned int k  = Encode(sname);
     unsigned int j = k % divisor;
-    bool flag = false;      //ÅĞ¶ÏÊÇ·ñËÑË÷µ½µÄ±êÖ¾
+    bool flag = false;      //åˆ¤æ–­æ˜¯å¦æœç´¢åˆ°çš„æ ‡å¿—
     Node *p = &nameHashTable[j];
+    //if (p != NULL)
     while (p->rightlink != NULL)
     {
         p=p->rightlink;
         avglength++;
         if(p->data.name == sname)
         {
-            cout<< p->data.name << " " << p->data.age <<" "
-              << p->data.phoneNumber << " " << p->data.sex <<" "
-            << p->data._class << endl;
+            //cout<< p->data.name << " " << p->data.age <<" "
+             // << p->data.phoneNumber << " " << p->data.sex <<" "
+            //<< p->data._class << endl;
             flag = true;
         }
     }
     if (!flag)
     {
-        cout <<"²»´æÔÚ¸ÃÁªÏµÈË£¡"<< endl;
+        cout <<"ä¸å­˜åœ¨è¯¥è”ç³»äººï¼"<< endl;
         return false;
     }
     else
@@ -265,15 +266,15 @@ bool HashTable::phoneNumberSearch(string sphoneNumber)
         avglength++;
         if(p->data.phoneNumber == sphoneNumber)
         {
-            cout << p->data.name << " " << p->data.age << " "
-             << p->data.phoneNumber << " " << p->data.sex << " "
-            << p->data._class<< endl;
+            //cout << p->data.name << " " << p->data.age << " "
+             //<< p->data.phoneNumber << " " << p->data.sex << " "
+            //<< p->data._class<< endl;
             flag = true;
         }
     }
     if (!flag)
     {
-        cout <<"²»´æÔÚ¸ÃÁªÏµÈË£¡"<< endl;
+        cout <<"ä¸å­˜åœ¨è¯¥è”ç³»äººï¼"<< endl;
         return false;
     }
     else
@@ -314,7 +315,7 @@ void HashTable::nameRemove(string sname)
     }
     if (!flag)
     {
-        cout <<"²»´æÔÚ¸ÃÁªÏµÈË£¡"<< endl;
+        cout <<"ä¸å­˜åœ¨è¯¥è”ç³»äººï¼"<< endl;
     }
 }
 
@@ -350,14 +351,14 @@ void HashTable::phoneNumberRemove(string sphoneNumber)
     }
     if (!flag)
     {
-        cout <<"²»´æÔÚ¸ÃÁªÏµÈË£¡"<< endl;
+        cout <<"ä¸å­˜åœ¨è¯¥è”ç³»äººï¼"<< endl;
     }
 }
 
 void HashTable::fileRead()
 {
     ifstream fin;
-    fin.open("files\\contact.txt");
+    fin.open("E:\\Qtprojects\\Contact\\files\\contact.txt");
     string sname, sage, sphoneNumber, ssex, s_class;
     if (fin.peek() == EOF)
     {
@@ -414,3 +415,4 @@ HashTable::~HashTable()
     delete [] nameHashTable;
     delete [] numHashTable;
 }
+

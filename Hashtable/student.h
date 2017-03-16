@@ -1,5 +1,5 @@
-#ifndef STUDENT_H_INCLUDED
-#define STUDENT_H_INCLUDED
+#ifndef STUDENT_H
+#define STUDENT_H
 #include <iostream>
 
 using namespace std;
@@ -16,6 +16,4 @@ struct Student
             string s_class, Student *per=NULL);
     Student(Student *per=NULL);
 };
-
-
-#endif // STUDENT_H_INCLUDED
+#endif // STUDENT_H

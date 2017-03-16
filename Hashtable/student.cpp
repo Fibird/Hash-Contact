@@ -14,3 +14,4 @@ Student::Student(Student *per)
 {
     link=per;
 }
+
